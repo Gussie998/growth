@@ -11,13 +11,34 @@ void menu(){
 
 void game(){
 	char board[ROW][COL] = { 0 };
+	int ret = 0;
 	InitBoard(board,ROW,COL);//初始化棋盘
 	DisplayBoard(board, ROW, COL);// 打印棋盘
-	while (1){
+	while (1){  
 		PlayerMove(board, ROW, COL);
+		ret = CheckWin(board, ROW, COL);
+		if (ret != 'C'){
+			break;
+		}
+
 		DisplayBoard(board, ROW, COL);
 		ComputerMove(board, ROW, COL);
+		if (ret != 'C'){
+			break;
+		}
 		DisplayBoard(board, ROW, COL);
+	}
+	if (ret == '*'){
+		printf("玩家赢");
+	}
+	else if (ret == '#'){
+		printf("电脑赢");
+	}
+	else if (ret == 'Q'){
+		printf("平局");
+	}
+	else {
+		printf("");
 	}
 }
 
