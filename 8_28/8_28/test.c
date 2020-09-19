@@ -29,16 +29,13 @@ void game(){
 		DisplayBoard(board, ROW, COL);
 	}
 	if (ret == '*'){
-		printf("玩家赢");
+		printf("玩家赢\n");
 	}
 	else if (ret == '#'){
-		printf("电脑赢");
+		printf("电脑赢\n");
 	}
 	else if (ret == 'Q'){
-		printf("平局");
-	}
-	else {
-		printf("");
+		printf("平局\n");
 	}
 }
 

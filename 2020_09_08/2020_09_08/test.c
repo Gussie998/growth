@@ -8,14 +8,7 @@ void menu(){
 	printf("*************************\n");
 }
 
-void level(){
-	printf("***************************\n");
-	printf("*******  1.simple  ********\n");
-	printf("*******  2.medium  ********\n");
-	printf("*******  3.difficult ******\n");
-	printf("***************************\n");
 
-}
 
 void game(){
 	char mine[ROWS][COLS] = { 0 };//²¼ÖÃµÄÀ×

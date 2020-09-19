@@ -1,6 +1,6 @@
-//#define _CRT_SECURE_NO_WARNINGS 1
-//#include <stdio.h>
-//#include <string.h>
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
 
 //ц╟ещеепР
 //void bubble_sort(int arr[],int n){
