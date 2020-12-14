@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS 1
 #include "contackBook.h"
 //
 //void Test1(){
@@ -19,7 +18,9 @@ enum OPTION{
 	Add,
 	Search,
 	Del,
-	Update
+	Update,
+	Save,
+	Print
 };
 
 int ContactBookMenu(){
@@ -45,6 +46,8 @@ int ContactBookMenu(){
 		printf("****************2、查找***************\n");
 		printf("****************3、删除***************\n");
 		printf("****************4、修改***************\n");
+		printf("****************5、保存***************\n");
+		printf("****************6、打印***************\n");
 		printf("**************************************\n");
 		printf("请选择>>>>");
 		scanf("%d", &option);
@@ -52,7 +55,7 @@ int ContactBookMenu(){
 		{
 		case Add:
 			printf("请依次输入要添加联系人的姓名、年纪、电话和地址>>>>\n");
-			scanf("%s %d %s %s", ct.name, ct.age, ct.tel, ct.address);
+			scanf("%s %d %s %s", ct.name, &ct.age, ct.tel, ct.address);
 			ContactAdd(&cb, ct);
 			break;
 		case Exit:
@@ -119,6 +122,12 @@ int ContactBookMenu(){
 				scanf("%s", address);
 				ContactUpdateTel(&cb, name, address);
 			}
+			break;
+		case Save:
+			ContactBookSave(&cb);
+			break;
+		case Print:
+			ContactBookPrint(&cb);
 			break;
 		default:
 		   printf("没有此选项，请重新选择\n");

@@ -1,6 +1,3 @@
-//// ContackBook.cpp : 定义控制台应用程序的入口点。
-////
-#define _CRT_SECURE_NO_WARNINGS 1
 #include "contackBook.h"
 
 
@@ -120,4 +117,17 @@ void ContactBookPrint(ContactBook* pcb)
 	}
 }
 
+
+void ContactBookSave(ContactBook* pcb){
+	FILE* fout = fopen("contactlist.txt", "w");
+	for (int i = 0; i < pcb->size; ++i){
+		fprintf(fout,"&s %d %s %s\n",pcb->contactArray
+			[i].address, pcb->contactArray
+			[i].age, pcb->contactArray
+			[i].name, pcb->contactArray
+			[i].tel);
+
+	}
+	fclose(fout);
+}
 

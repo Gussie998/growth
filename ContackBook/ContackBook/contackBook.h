@@ -1,7 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #pragma once
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <stdlib.h>
 
 #define NAME_MAX 20
 #define TEL_MAX 20
@@ -37,3 +39,4 @@ void ContactUpdateAge(ContactBook* pcb, char* name, short age);
 void ContactUpdateAddr(ContactBook* pcb, char* name, char* address);
 void ContactUpdateName(ContactBook* pcb, char* name, char* name2);
 void ContactBookPrint(ContactBook* pcb);
+void ContactBookSave(ContactBook* pcb);
